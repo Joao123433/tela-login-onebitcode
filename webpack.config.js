@@ -20,7 +20,7 @@ module.exports = {
   mode: "production",
   devServer: {
     static: {
-      directory: path.resolve(__dirname, "./dist-views/")
+      directory: path.resolve(__dirname )
     }
   }
 }

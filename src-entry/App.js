@@ -5,6 +5,8 @@ import "./styles/App.css"
 
 async function validate(email, senha) {
   try {
+    document.querySelectorAll("span").forEach((span) => span.textContent = "")
+
     await validateEmail(email.value)
     email.classList.remove("error")
     email.classList.add("sucess")
@@ -12,8 +14,6 @@ async function validate(email, senha) {
     await validatePassword(senha.value)
     senha.classList.remove("error")
     senha.classList.add("sucess")
-
-    document.querySelectorAll("span").forEach((span) => span.textContent = "")
   } catch(erro) {
     document.querySelector(`#span-${erro.input}`).innerHTML = erro.message
     document.querySelector(`#${erro.input}`).classList.remove("sucess")
